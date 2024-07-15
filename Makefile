@@ -1,7 +1,7 @@
 .RECIPEPREFIX := >
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++26
+CXXFLAGS = -Wall -Wextra
 
 SRCS = $(wildcard src/*.cpp)
 
@@ -14,7 +14,7 @@ LIB_FLAGS := $(addprefix -L, $(LIB_DIRS))
 LIB_NAMES := $(sort $(notdir $(wildcard lib/*)))
 LINKER_FLAGS := $(addprefix -l, $(LIB_NAMES))
 
-ADDITIONAL_LINKER_FLAGS := -lopengl32 -lgdi32 -lwinmm -lstdc++exp
+ADDITIONAL_LINKER_FLAGS := -lopengl32 -lgdi32 -lwinmm
 
 main: main.cpp $(SRCS)
 > $(CXX) $(CXXFLAGS) $(INC_FLAGS) $^ -o $@ $(LIB_FLAGS) $(LINKER_FLAGS) $(ADDITIONAL_LINKER_FLAGS)
