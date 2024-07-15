@@ -11,7 +11,7 @@ This repository contains a Makefile template designed for C/C++ projects, simpli
 
 ## Directory Structure
 
-Ensure your project matches the following structure:
+The template uses the following directory structure:
 ```sh
 project-root/
 │
