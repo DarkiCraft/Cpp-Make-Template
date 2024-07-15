@@ -1,6 +1,6 @@
 # Cpp-Make-Template
 
-This repository contains a Makefile template designed for C/C++ projects, simplifying the build process and allowing for easy integration of external libraries on a Windows platform.
+This repository contains a Makefile template designed for C++ projects, simplifying the build process and allowing for easy integration of external libraries on a Windows platform.
 
 ## Features
 
