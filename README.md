@@ -38,7 +38,7 @@ project-root/
 CXX = g++  # change to gcc to compile C programs
 CXXFLAGS = -Wall -Wextra  # change compiler flags as needed
 
-SRCS = $(wildcard src/*.cpp)
+SRCS = $(wildcard src/*.c) $(wildcard src/*.cpp) $(wildcard src/*.cc)
 
 INC_DIRS := $(sort $(dir $(wildcard include/*)))
 INC_FLAGS := $(addprefix -I, $(INC_DIRS))
