@@ -59,72 +59,75 @@ main: main.cpp $(SRCS)
 
 ## Instructions:
 
-  ### 1. Clone the repository
+### 1. Clone the repository
   
-     ```sh
-     git clone https://github.com/DarkiCraft/Cpp-Make-Template.git
-     cd Cpp-Make-Template
-     ```
-     Rename the directory to your project name.
+```sh
+git clone https://github.com/DarkiCraft/Cpp-Make-Template.git
+cd Cpp-Make-Template
+```
+Rename the directory to your project name.
   
-  ### 2. Add source files
+### 2. Add source files
      
-     `main.cpp` is the entry point of the program. Add your additional source files in the `src/` directory.
+`main.cpp` is the entry point of the program. Add your additional source files in the `src/` directory.
   
-  ### 3. Add header files
+### 3. Add header files
   
-     Add your source files' respective header files (if any) in the `include/` directory. If you are creating subdirectories in the `include/` directory, make sure to include them properly in your code:
+Add your source files' respective header files (if any) in the `include/` directory. If you are creating subdirectories in the `include/` directory, make sure to include them properly in your code:
   
-     ```cpp
-     #include "subdirectory/header.h"
-     ```
-  ### 4. Add External Libraries
+```cpp
+#include "subdirectory/header.h"
+```
+### 4. Add External Libraries (Optional)
   
-  To add external libraries to your project, follow these steps:
+To add external libraries to your project, follow these steps:
   
-  #### i. Organize Header Files:
+#### i. Organize Header Files:
   
-  Place the header files of the external library in the include/ directory.
-  It's recommended to use a subdirectory for each library for better organization.
-  For example, for the {fmt} library, place the header files in include/fmt/.
+Place the header files of the external library in the `include/` directory.
+It's recommended to use a subdirectory for each library for better organization.
+For example, for the [Raylib](https://github.com/raysan5/raylib) library, place the header files in `include/raylib/`.
   
-  ```sh
-  include/
-  └── fmt/
-      └── fmt.h
-  ```
+```sh
+include/
+└── raylib/
+   └── raylib.h
+   └── raymath.h
+   └── rlgl.h
+```
   
-  #### ii. Organize Compiled Library Files:
+#### ii. Organize Compiled Library Files:
   
-  Place the compiled library files (e.g., .lib or .dll for Windows) in the lib/ directory.
-  Ensure the subdirectory name matches the linking flag required by the library.
-  For example, for the {fmt} library, place the compiled library file in lib/fmt/.
+Place the compiled library files in the `lib/` directory.
+Ensure the subdirectory name matches the linking flag required by the library.
+For example, for the [Raylib](https://github.com/raysan5/raylib) library, place the compiled library file in `lib/raylib/`.
   
-  ```sh
-  lib/
-  └── fmt/
-      └── libfmt.a  # or libfmt.dll for dynamic libraries
-  ```
+```sh
+lib/
+└── raylib/         # `raylib` matches the -lraylib linker flag
+  └── librarylib.a  # raylib compiled library
+```
   
-  #### iii. Update Makefile:
+#### iii. Update Makefile:
   
-  Add any additional linker flags required by the library to the ADDITIONAL_LINKER_FLAGS variable.
-  For example, the Raylib library requires additional linker flags: -lopengl32, -lgdi32, and -lwinmm.
+Add any additional linker flags required by the library to the `ADDITIONAL_LINKER_FLAGS variable`.
+For example, the [Raylib](https://github.com/raysan5/raylib) library requires additional linker flags: `-lopengl32`, `-lgdi32`, and `-lwinmm`.
   
-  ```makefile
-  # Add any additional linker flags needed by your libraries
-  ADDITIONAL_LINKER_FLAGS := -lopengl32 -lgdi32 -lwinmm
-  ```
+```makefile
+ADDITIONAL_LINKER_FLAGS := -lopengl32 -lgdi32 -lwinmm
+```
+
+Refer to the respective library's documentation for the specific linker flags which may be required.
+
+### 5. Build the project
   
-  ### 5. Build the project
+The project can be built by running the following whilst in the `project-root/`:
   
-     The project can be built by running the following whilst in the `project-root/`:
-  
-     ```sh
-     make main
-     ```
-     
-     This will create a `main.exe` file in the `project-root/` directory.
+```sh
+make main
+```
+   
+This will create a `main.exe` file in the `project-root/` directory.
 
 ## License
 
