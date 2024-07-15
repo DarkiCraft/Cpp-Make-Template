@@ -110,7 +110,7 @@ lib/
   
 #### iii. Update Makefile:
   
-Add any additional linker flags required by the library to the `ADDITIONAL_LINKER_FLAGS variable`.
+Add any additional linker flags required by the library to the `ADDITIONAL_LINKER_FLAGS` variable.
 For example, the [Raylib](https://github.com/raysan5/raylib) library requires additional linker flags: `-lopengl32`, `-lgdi32`, and `-lwinmm`.
   
 ```makefile
