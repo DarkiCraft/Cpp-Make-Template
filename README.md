@@ -35,7 +35,7 @@ project-root/
 ```makefile
 .RECIPEPREFIX := >
 
-CXX = g++  # change to gcc to compile C programs
+CXX = g++
 CXXFLAGS = -Wall -Wextra  # change compiler flags as needed
 
 SRCS = $(wildcard src/*.c) $(wildcard src/*.cpp) $(wildcard src/*.cc)
